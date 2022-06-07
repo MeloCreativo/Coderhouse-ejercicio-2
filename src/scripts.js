@@ -9,7 +9,7 @@ const ESPECTACULOS = 3
 function validateName() {
     let nameEntering = prompt("¡Bienvenidos a QuizScript!\nPor favor ingresa tu nombre:")
     while(nameEntering === "" || !isNaN(nameEntering)) {
-        nameEntering = prompt("Lo sentimos, no se permiten caracteres numéricos\nPor favor ingresa un nombre compuesto de letras:")
+        nameEntering = prompt("Lo sentimos, no puedes proceder sin un nombre de usuario y no se permiten caracteres numéricos.\nPor favor ingresa un nombre compuesto de letras:")
     }
     return nameEntering;
 }
