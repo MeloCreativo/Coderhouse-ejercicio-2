@@ -9,7 +9,7 @@ const ESPECTACULOS = 3
 function validateName() {
     let nameEntering = prompt("¡Bienvenidos a QuizScript!\nPor favor ingresa tu nombre:")
     while(nameEntering === "" || !isNaN(nameEntering)) {
-        nameEntering = prompt("Bienvenido/a.\nPor favor ingrese su nombre:")
+        nameEntering = prompt("Lo sentimos, no se permiten caracteres numéricos\nPor favor ingresa un nombre compuesto de letras:")
     }
     return nameEntering;
 }
@@ -18,7 +18,7 @@ function validateName() {
 function chooseCategory(nameEntering) {
     let categorySelection = parseInt(prompt("Muy bien " + nameEntering + " " + "para jugar elige una categoría, introduciendo el número de índice a la izquierda de la opción que decidas:\n1) Arte\n2) Cultura general\n3) Espectáculos"))
     while (categorySelection !== ARTE && categorySelection !== CULTURA && categorySelection !== ESPECTACULOS) {
-        categorySelection = parseInt(prompt("Hubo un error en tu selección " + nameEntering + ". " + "\nPor favor elige una categoría:\n1) Arte\n2) Cultura general\n3) Espectáculos"))
+        categorySelection = parseInt(prompt("Hubo un error en tu selección " + nameEntering + ". " + "\nPor favor elige una categoría:\n1) Arte\n2) Cultura General\n3) Espectáculos"))
     };
     return categorySelection;
 }
@@ -26,13 +26,13 @@ function chooseCategory(nameEntering) {
 // Categoría elegida y comienzo del Quiz
 function askQuestion(categorySelection) {
     if (categorySelection === ARTE) {
-        alert("Muy bien haz elegido la categoría Arte. !Responde las siguientes preguntas y acumula puntos para ganar!")
+        alert("Muy bien haz elegido la categoría Arte.\n!Responde las siguientes preguntas y acumula puntos para ganar!")
         result = artQuiz()
     } else if (categorySelection === CULTURA) {
-        alert("Muy bien haz elegido la categoría Cultura General. !Responde las siguientes preguntas y acumula puntos para ganar!")
+        alert("Muy bien haz elegido la categoría Cultura General.\n!Responde las siguientes preguntas y acumula puntos para ganar!")
         result = cultureQuiz()
     } else if (categorySelection === ESPECTACULOS) {
-        alert("Muy bien haz elegido la categoría Espectáculos. !Responde las siguientes preguntas y acumula puntos para ganar!")
+        alert("Muy bien haz elegido la categoría Espectáculos.\n!Responde las siguientes preguntas y acumula puntos para ganar!")
         result = entretainmentQuiz()
     }
     return result
